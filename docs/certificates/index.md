@@ -71,7 +71,7 @@ The Certificate of Origin (CoO) Data model is drawn from the UN/CEFACT Buy-Ship-
 
 To be completed
 
-## API SPecification
+## API Specification
 
 The Data Model has been used to generate a [CoO REST API specification](https://edi3.org/specs/edi3-regulatory/master/certificates/CertificateOfOrigin.html) in accordance with the [Open API3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md) standard. 
 
