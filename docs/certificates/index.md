@@ -8,7 +8,7 @@ contributors:
 
 ## Introduction
 
-Regulatory processes often involve certificates that assert compliance of a shipment with some specification or legislative framework.  FOr example
+Regulatory processes often involve certificates that assert compliance of a shipment with some specification or legislative framework.  For example
 
 * A Certificate of Origin (CoO) is issued by an accredited body on behalf of an exporter and is required by the importing regulator.  It asserts that the goods in a consignment conform to the terms of a Free Trade Agreement (FTA) and so may attract concenssional duty terms.
 * A Certifictae of Non Manipulation (CoNM) is issued by an accredited body on behalf of a transhipment port/country and it asserts that goods in a consignment were not altered during transhipment.
@@ -19,14 +19,14 @@ In most cases certificates are about a consignment of goods. Accordingly, the ed
 
 ## Goals
 
-To publish a consistent suite of data models and state lifecycles for various certifictaes used to satisfy regulatory processes. 
+To publish a consistent suite of data models and state lifecycles for various certifictaes used to satisfy regulatory processes and to support the [Inter Customs Ledger](https://edi3.org/icl/) project.
 
 
 ## Status
 
 Certificate types and status:
 
-* A [raw](//rfc.unprotocols.org/spec:2/COSS/raw.svg) Certificate Of Origin has been defined.
+* A ![raw](//rfc.unprotocols.org/spec:2/COSS/raw.svg) Certificate Of Origin has been defined.
 
 
 ## Glossary
@@ -63,6 +63,7 @@ The Certificate of Origin (CoO) Data model is drawn from the UN/CEFACT Buy-Ship-
 * Green elements are standard UN/CEFACT RDM elements.
 * Blue elements are standard enumerations.
 
+
 ![CoO](CertificateOfOrigin.png)
 
 
@@ -72,9 +73,13 @@ To be completed
 
 ## API SPecification
 
-The Data Model has been used to generate a [CoO REST API specifcication](https://edi3.org/specs/edi3-regulatory/master/certificates/CertificateOfOrigin.html) in accordance with the [Open API3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md) standard. 
+The Data Model has been used to generate a [CoO REST API specification](https://edi3.org/specs/edi3-regulatory/master/certificates/CertificateOfOrigin.html) in accordance with the [Open API3.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md) standard. 
+
+# Certificate of Non Manipulation
+
+To be completed
  
 # Related Material
 
- * ![CHAFTA CoO Template PDF](chafta-coo-template.pdf)
- * ![CoO data mapping UN / WCO Excel](CertificateOfOriginDataElementMapping.xlsx)
+ * [CHAFTA CoO Template PDF](chafta-coo-template.pdf)
+ * [CoO data mapping UN / WCO Excel](CertificateOfOriginDataElementMapping.xlsx)
