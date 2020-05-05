@@ -1,7 +1,7 @@
 ---
 title: "edi3 Certificates 1.0 Specification"
 specID: "certificates/1"
-status: "![raw](//rfc.unprotocols.org/spec:2/COSS/raw.svg)"
+status: "![draft](//rfc.unprotocols.org/spec:2/COSS/draft.svg)"
 editors: "[Steven Capell](mailto:steve.capell@gmail.com)"
 contributors: 
 ---
@@ -24,9 +24,7 @@ To publish a consistent suite of data models and state lifecycles for various ce
 
 ## Status
 
-Certificate types and status:
-
-* A ![raw](//rfc.unprotocols.org/spec:2/COSS/raw.svg) Certificate Of Origin has been defined.
+* This specification is in ![draft](//rfc.unprotocols.org/spec:2/COSS/raw.svg) state.  This means that design consensus has been reached and the specification is ready for implementation verification.
 
 
 ## Glossary
@@ -59,17 +57,15 @@ in this document are to be interpreted as described in RFC 2119.
 
 The Certificate of Origin (CoO) Data model is drawn from the UN/CEFACT Buy-Ship-Pay reference data model and conforms to the edi3 [UML profile specification](https://edi3.org/specs/edi3-uml-profile/master/)
 
-* Yellow elements are specific to the CoO. These are very simple - essentially a CoO decorates a standard consignment with a set of origin criteria and adds a document header.
-* Green elements are standard UN/CEFACT RDM elements.
-* Blue elements are standard enumerations.
-
 
 ![CoO](CertificateOfOrigin.png)
 
 
 ## State Lifecycle
 
-To be completed
+The certificate state lifecycle is shown below.  The "status" property of the "CertificateOfOrigin" entity in the API model MUST equal one of these values.
+
+![CoO Lifecycle](CoO_StateLifecycle.png)
 
 ## API Specification
 
@@ -82,4 +78,5 @@ To be completed
 # Related Material
 
  * [CHAFTA CoO Template PDF](chafta-coo-template.pdf)
+ * [JAEPA CoO Template](jaepa-coo-template.pdf)
  * [CoO data mapping UN / WCO Excel](CertificateOfOriginDataElementMapping.xlsx)
