@@ -1,16 +1,181 @@
 {
-    "schema": {
-        "model": "CertificateOfOrigin",
-        "type": "object",
-        "properties": {
-            "certificatesOfOrigin": {
-                "$ref": "#/definitions/CertificateOfOrigin"
+    "openapi": "3.0.0",
+    "info": {
+        "description": "",
+        "title": "CertificateOfOrigin",
+        "version": ""
+    },
+    "servers": [],
+    "paths": {
+        "/CertificatesOfOrigin": {
+            "get": {
+                "tags": [
+                    "CertificatesOfOrigin"
+                ],
+                "description": "Get a list of CertificateOfOrigin",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "items": {
+                                        "$ref": "#/components/schemas/CertificateOfOrigin"
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        }
+                    }
+                }
             },
-            "certification": {
-                "$ref": "#/definitions/Document_Authentication"
+            "post": {
+                "tags": [
+                    "CertificatesOfOrigin"
+                ],
+                "description": "Create a new CertificateOfOrigin",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CertificateOfOrigin"
+                            }
+                        }
+                    },
+                    "description": "",
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CertificateOfOrigin"
+                                }
+                            }
+                        },
+                        "description": "Created"
+                    }
+                }
             }
         },
-        "definitions": {
+        "/CertificatesOfOrigin/{id}": {
+            "get": {
+                "tags": [
+                    "CertificatesOfOrigin"
+                ],
+                "description": "Get single CertificateOfOrigin by id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "missing description",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CertificateOfOrigin"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "CertificatesOfOrigin"
+                ],
+                "description": "Update an existing CertificateOfOrigin",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "missing description",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CertificateOfOrigin"
+                            }
+                        }
+                    },
+                    "description": "",
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CertificateOfOrigin"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/CertificatesOfOrigin/{id}/Certification": {
+            "post": {
+                "tags": [
+                    "CertificatesOfOrigin"
+                ],
+                "description": "Create a new CertificateOfOrigin",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "missing description",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/DocumentAuthentication"
+                            }
+                        }
+                    },
+                    "description": "",
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DocumentAuthentication"
+                                }
+                            }
+                        },
+                        "description": "Created"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
             "CertificateOfOrigin": {
                 "description": "",
                 "type": "object",
@@ -33,14 +198,14 @@
                                 "description": ""
                             },
                             {
-                                "$ref": "#/definitions/SupplyChainConsignment"
+                                "$ref": "#/components/schemas/SupplyChainConsignment"
                             }
                         ]
                     }
                 },
                 "allOf": [
                     {
-                        "$ref": "#/definitions/ExchangedDocument"
+                        "$ref": "#/components/schemas/ExchangedDocument"
                     },
                     {
                         "type": "object"
@@ -104,7 +269,7 @@
                                 "description": "A binary file attached to this exchanged document."
                             },
                             {
-                                "$ref": "#/definitions/SpecifiedBinaryFile"
+                                "$ref": "#/components/schemas/SpecifiedBinaryFile"
                             }
                         ]
                     },
@@ -114,7 +279,7 @@
                                 "description": "The first or primary signature that authenticates this exchanged document."
                             },
                             {
-                                "$ref": "#/definitions/DocumentAuthentication"
+                                "$ref": "#/components/schemas/DocumentAuthentication"
                             }
                         ]
                     },
@@ -124,7 +289,7 @@
                                 "description": "The location where this exchanged document has been issued."
                             },
                             {
-                                "$ref": "#/definitions/LogisticsLocation"
+                                "$ref": "#/components/schemas/LogisticsLocation"
                             }
                         ]
                     },
@@ -134,7 +299,7 @@
                                 "description": "The party that issues this exchanged document."
                             },
                             {
-                                "$ref": "#/definitions/TradeParty"
+                                "$ref": "#/components/schemas/TradeParty"
                             }
                         ]
                     },
@@ -144,7 +309,7 @@
                                 "description": "The second signature, also known as the first counter signature, that has been authenticated on this exchanged document indicating where appropriate the authentication party."
                             },
                             {
-                                "$ref": "#/definitions/DocumentAuthentication"
+                                "$ref": "#/components/schemas/DocumentAuthentication"
                             }
                         ]
                     }
@@ -221,7 +386,7 @@
                                 "description": "A departure event during this logistics transport movement."
                             },
                             {
-                                "$ref": "#/definitions/TransportEvent"
+                                "$ref": "#/components/schemas/TransportEvent"
                             }
                         ]
                     },
@@ -231,7 +396,7 @@
                                 "description": "The means of transport used for this logistics transport movement."
                             },
                             {
-                                "$ref": "#/definitions/LogisticsTransportMeans"
+                                "$ref": "#/components/schemas/LogisticsTransportMeans"
                             }
                         ]
                     }
@@ -268,7 +433,7 @@
                     "attachedBinaryFile": {
                         "allOf": [
                             {
-                                "$ref": "#/definitions/SpecifiedBinaryFileIds"
+                                "$ref": "#/components/schemas/SpecifiedBinaryFileIds"
                             },
                             {
                                 "type": "object"
@@ -335,7 +500,7 @@
                                 "description": "The export country for this supply chain consignment."
                             },
                             {
-                                "$ref": "#/definitions/TradeCountry"
+                                "$ref": "#/components/schemas/TradeCountry"
                             }
                         ]
                     },
@@ -345,7 +510,7 @@
                                 "description": "The party who exports this supply chain consignment."
                             },
                             {
-                                "$ref": "#/definitions/TradeParty"
+                                "$ref": "#/components/schemas/TradeParty"
                             }
                         ]
                     },
@@ -355,7 +520,7 @@
                                 "description": "The import country for this supply chain consignment."
                             },
                             {
-                                "$ref": "#/definitions/TradeCountry"
+                                "$ref": "#/components/schemas/TradeCountry"
                             }
                         ]
                     },
@@ -365,13 +530,13 @@
                                 "description": "The party who imports this supply chain consignment."
                             },
                             {
-                                "$ref": "#/definitions/TradeParty"
+                                "$ref": "#/components/schemas/TradeParty"
                             }
                         ]
                     },
                     "includedConsignmentItems": {
                         "items": {
-                            "$ref": "#/definitions/SupplyChainConsignmentItem"
+                            "$ref": "#/components/schemas/SupplyChainConsignmentItem"
                         },
                         "type": "array",
                         "description": "A consignment item included in this supply chain consignment."
@@ -382,7 +547,7 @@
                                 "description": "The baseport location at which this supply chain consignment is to be loaded on a means of transport according to the transport contract."
                             },
                             {
-                                "$ref": "#/definitions/LogisticsLocation"
+                                "$ref": "#/components/schemas/LogisticsLocation"
                             }
                         ]
                     },
@@ -392,13 +557,13 @@
                                 "description": "A main carriage logistics transport movement for this supply chain consignment."
                             },
                             {
-                                "$ref": "#/definitions/LogisticsTransportMovement"
+                                "$ref": "#/components/schemas/LogisticsTransportMovement"
                             }
                         ]
                     },
                     "transportPackages": {
                         "items": {
-                            "$ref": "#/definitions/LogisticsPackage"
+                            "$ref": "#/components/schemas/LogisticsPackage"
                         },
                         "type": "array",
                         "description": "Transport packages for this supply chain consignment."
@@ -409,7 +574,7 @@
                                 "description": "The baseport location at which this supply chain consignment is to be unloaded from a means of transport according to the transport contract."
                             },
                             {
-                                "$ref": "#/definitions/LogisticsLocation"
+                                "$ref": "#/components/schemas/LogisticsLocation"
                             }
                         ]
                     }
@@ -434,7 +599,7 @@
                                 "description": "A cross-border regulatory procedure applicable to this supply chain consignment item."
                             },
                             {
-                                "$ref": "#/definitions/CrossBorderRegulatoryProcedure"
+                                "$ref": "#/components/schemas/CrossBorderRegulatoryProcedure"
                             }
                         ]
                     },
@@ -444,13 +609,13 @@
                                 "description": "The party which manufactured this supply chain consignment item."
                             },
                             {
-                                "$ref": "#/definitions/TradeParty"
+                                "$ref": "#/components/schemas/TradeParty"
                             }
                         ]
                     },
                     "tradeLineItems": {
                         "items": {
-                            "$ref": "#/definitions/SupplyChainTradeLineItem"
+                            "$ref": "#/components/schemas/SupplyChainTradeLineItem"
                         },
                         "type": "array",
                         "description": "A trade line item included in this supply chain consignment item."
@@ -471,7 +636,7 @@
                                 "description": "A document referenced for this supply chain trade line item."
                             },
                             {
-                                "$ref": "#/definitions/ReferencedDocument"
+                                "$ref": "#/components/schemas/ReferencedDocument"
                             }
                         ]
                     },
@@ -481,7 +646,7 @@
                                 "description": "The product specified for this supply chain trade line item."
                             },
                             {
-                                "$ref": "#/definitions/TradeProduct"
+                                "$ref": "#/components/schemas/TradeProduct"
                             }
                         ]
                     }
@@ -565,7 +730,7 @@
                                 "description": "The postal address for this trade party."
                             },
                             {
-                                "$ref": "#/definitions/TradeAddress"
+                                "$ref": "#/components/schemas/TradeAddress"
                             }
                         ]
                     }
@@ -590,7 +755,7 @@
                                 "description": "A product classification designated for this trade product."
                             },
                             {
-                                "$ref": "#/definitions/ProductClassification"
+                                "$ref": "#/components/schemas/ProductClassification"
                             }
                         ]
                     },
@@ -600,7 +765,7 @@
                                 "description": "A country of origin for this trade product."
                             },
                             {
-                                "$ref": "#/definitions/TradeCountry"
+                                "$ref": "#/components/schemas/TradeCountry"
                             }
                         ]
                     }
